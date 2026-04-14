@@ -285,7 +285,7 @@ module uartInterface(
                 startCommand <= 1'b1;
                 // NEW: Parse pll_sel from rxBuf[0] high bits or rxBuf[1]
                 pll_sel <= rxBuf[0][7:6];    // Bits 7:6 of command byte = PLL select
-                Temp variable for immediate case use
+                //Temp variable for immediate case use
                 uCommand parsed_cmd = uCommand'(rxBuf[0][5:0]);
                 currCommand <= parsed_cmd;  // Latch for next time
                 address <= rxBuf[1][4:0];    
