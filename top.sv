@@ -43,6 +43,7 @@ module top(
     output wire i2c_scl    
     );
     //reg MISO;
+    wire [3:0] pll_miso_in;
     assign ja5 = uart_tx;
     assign ja6 = uart_rx;
     
@@ -123,7 +124,7 @@ module top(
     .pll_power_ready(pll_power_ready),
     //.MISO(MISO),
     .pll_sel(pll_sel),
-    .pll_miso(pll_miso_in)
+        .pll_miso(pll_miso_in),
     .MOSI(MOSI),
     .CS(CS),
     .SCK(SCK),
