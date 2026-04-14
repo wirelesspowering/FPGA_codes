@@ -38,6 +38,7 @@ module top(
     
     output logic ja5,
     output logic ja6,
+    inout  wire[8:0] pio, 
     //I2C pins
     inout  wire i2c_sda, 
     output wire i2c_scl    
