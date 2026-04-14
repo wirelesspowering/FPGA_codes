@@ -34,8 +34,8 @@ module top(
     output SCK,
     output CS,
     output NRST_PLL,
-    output logic [4:0] pio,
-    input logic [8:5] pio,
+    
+    
     output logic ja5,
     output logic ja6,
     //I2C pins
@@ -53,11 +53,11 @@ module top(
     //assign pio[3] = MISO;
     //New pin updates
     //muxed PLL input pins
-    assign pll_miso_in[0] = pio[5];  // PLL0 MISO
-    assign pll_miso_in[1] = pio[6];  // PLL1
-    assign pll_miso_in[2] = pio[7];  // PLL2
-    assign pll_miso_in[3] = pio[8];  // PLL3
-
+    assign  pio[5]=pll_miso_in[0] ;  // PLL0 MISO
+    assign  pio[6]=pll_miso_in[1] ;  // PLL1
+    assign  pio[7]=pll_miso_in[2] ;  // PLL2
+    assign  pio[8]=pll_miso_in[3] ;  // PLL3
+    
     
     /* MISO Test Code
     reg [7:0] SPIVAL = 8'h00;
