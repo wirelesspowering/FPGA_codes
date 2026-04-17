@@ -1,0 +1,24 @@
+import serial
+import time
+
+port = "COM3"   # change this to your board's COM port
+baud = 115200
+
+ser = serial.Serial(
+    port=port,
+    baudrate=baud,
+    bytesize=serial.EIGHTBITS,
+    parity=serial.PARITY_NONE,
+    stopbits=serial.STOPBITS_ONE,
+    timeout=1
+)
+
+time.sleep(0.2)
+
+ser.write(bytes([0x00, 0x00]))
+ser.flush()
+
+resp = ser.read(6)
+print("RX:", resp.hex())
+
+ser.close()
