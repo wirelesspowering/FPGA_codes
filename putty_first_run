@@ -14,9 +14,11 @@ ser = serial.Serial(
 )
 
 time.sleep(0.2)
-
+#Firstcommand
 #ser.write(bytes([0x8C, 0x00]))
 ser.write(bytes([0x0C, 0x00]))
+#second command
+#ser.write(bytes([0x04, 0x01, 0x23]))
 ser.flush()
 
 resp = ser.read(6)
